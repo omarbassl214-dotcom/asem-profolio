@@ -4,158 +4,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asem Basil | Luxury Videographer Portfolio</title>
+    <title>Asem Basil Abo Rahma | Fashion & Art Videographer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Background Video -->
+
+
     <div class="bg-video-container">
-        <video class="bg-video" autoplay muted loop playsinline>
-            <source src="background-noise.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="bg-animation.mp4" type="video/mp4">
         </video>
     </div>
 
-    <header>
-        <div class="logo">ASEM BASIL</div>
-        <div class="menu-trigger">
-            <span></span>
-            <span></span>
+    <header id="header">
+        <div class="logo">
+            <span>ASEM BASIL</span>
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#hero">Featured</a></li>
-                <li><a href="#portfolio">Work</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#home">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+
+        <div class="mobile-nav-overlay">
+            <ul class="mobile-nav-links">
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#home">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <div class="mobile-nav-overlay">
-        <ul class="mobile-nav-links">
-            <li><a href="#hero">Featured</a></li>
-            <li><a href="#portfolio">Work</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-    </div>
-
-    <section id="hero" class="hero">
+    <section id="home" class="hero">
         <div class="video-container">
-            <video class="hero-video" autoplay muted loop playsinline>
+            <video autoplay muted loop playsinline class="hero-video">
+                <!-- REPLACE 'hero-video.mp4' WITH YOUR YOUTUBE/VIMEO LINK (e.g., https://www.youtube.com/watch?v=...) -->
                 <source src="hero-video.mp4" type="video/mp4">
             </video>
         </div>
-
         <div class="section-divider"></div>
-
         <div class="hero-image-container">
-            <div class="hero-side-text reveal-init reveal-slide-left">
-                <span class="sub-title">DIRECTOR &</span>
-                <h1 class="name">ASEM BASIL</h1>
+            <div class="hero-side-text reveal-init">
+                <span class="name">ASEM BASIL ABO RAHMA</span>
+                <span class="sub-title">VIDEOGRAPHER</span>
             </div>
-
-            <img src="portrait.jpg" alt="Asem Basil" class="hero-portrait reveal-init">
-
-            <div class="hero-description-text reveal-init reveal-slide-right">
-                <p>VIDEOGRAPHER</p>
-                <p>BASED IN DUBAI. WORKING WORLDWIDE.</p>
-                <p>SPECIALIZING IN CINEMATIC STORYTELLING AND VISUAL ART.</p>
+            <img src="hero-portrait.jpg" alt="Portrait" class="hero-portrait reveal-init">
+            <div class="hero-description-text reveal-init">
+                <p>With over six years of professional experience behind the lens, I have mastered the art of capturing
+                    the pulse of a moment—whether it’s the high-stakes energy of a brand launch, the rhythmic precision
+                    of a commercial kitchen, or the intimate, unscripted emotions of a wedding.</p>
+                <p>My work sits at the intersection of cinematic artistry and strategic marketing. I’ve spent over half
+                    a decade collaborating with brands, restaurants, and fashion houses to create visual assets that
+                    don’t just look beautiful, but drive engagement and tell a story.</p>
+                <p>From the runway to the altar, and from global advertisements to local restaurant debuts, I bring a
+                    signature style defined by technical excellence, adaptive lighting, and intentional editing. I don't
+                    just document events—I curate the visual legacy of your brand or your most significant life
+                    milestones.</p>
             </div>
         </div>
     </section>
 
     <section id="portfolio" class="portfolio">
-        <div class="section-subtitle">SELECTED WORKS</div>
-        <h2 class="reveal-init">PORTFOLIO</h2>
-
+        <h2 class="reveal-init reveal-slide-left">SELECTED WORKS</h2>
+        <p class="section-subtitle">
+            A curated gallery of cinematic motion and high-fashion storytelling.
+        </p>
         <div class="portfolio-grid">
-            <!-- Row 1 -->
+            <!-- Portfolio Row 1 -->
             <div class="portfolio-row">
                 <div class="portfolio-card reveal-init" data-video="commercial-reel.mp4">
                     <div class="thumbnail-wrapper">
-                        <img src="thumb1.jpg" alt="Commercial Reel">
-                        <video class="preview-video" muted loop playsinline preload="none">
-                            <source src="commercial-reel.mp4" type="video/mp4">
-                        </video>
+                        <img src="https://images.unsplash.com/photo-1485043433441-db091a258e5a?auto=format&fit=crop&q=80&w=800"
+                            alt="Commercials" loading="lazy">
+                        <video class="preview-video" loop muted playsinline src="commercial-reel.mp4"></video>
                     </div>
                     <div class="card-content">
-                        <h3>COMMERCIAL REEL</h3>
-                        <p>High-energy visual storytelling for global brands.</p>
+                        <h3>COMMERCIALS</h3>
+                        <p>High-end brand storytelling and cinematic advertisements.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-card reveal-init" data-video="fashion-film.mp4">
+                <div class="portfolio-card reveal-init" data-video="wedding-film.mov">
                     <div class="thumbnail-wrapper">
-                        <img src="thumb2.jpg" alt="Fashion Film">
-                        <video class="preview-video" muted loop playsinline preload="none">
-                            <source src="fashion-film.mp4" type="video/mp4">
-                        </video>
+                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800"
+                            alt="Weddings" loading="lazy">
+                        <video class="preview-video" loop muted playsinline src="wedding-film.mov"></video>
                     </div>
                     <div class="card-content">
-                        <h3>FASHION EDITORIAL</h3>
-                        <p>Cinematic aesthetics meets luxury fashion.</p>
+                        <h3>WEDDINGS</h3>
+                        <p>Capturing unscripted emotions and intimate milestones.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 2 -->
+            <!-- Portfolio Row 2 -->
             <div class="portfolio-row">
-                <div class="portfolio-card reveal-init" data-video="documentary.mp4">
+                <div class="portfolio-card reveal-init" data-video="real-estate.mp4">
                     <div class="thumbnail-wrapper">
-                        <img src="thumb3.jpg" alt="Documentary">
-                        <video class="preview-video" muted loop playsinline preload="none">
-                            <source src="documentary.mp4" type="video/mp4">
-                        </video>
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
+                            alt="Real Estate" loading="lazy">
+                        <video class="preview-video" loop muted playsinline src="real-estate.mp4"></video>
                     </div>
                     <div class="card-content">
-                        <h3>LIFE IN MOTION</h3>
-                        <p>A documentary exploration of human energy.</p>
+                        <h3>REAL ESTATE</h3>
+                        <p>Dynamic interior and architectural visual tours.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-card reveal-init" data-video="music-video.mp4">
+                <div class="portfolio-card reveal-init" data-video="fashion-reel.mp4">
                     <div class="thumbnail-wrapper">
-                        <img src="thumb4.jpg" alt="Music Video">
-                        <video class="preview-video" muted loop playsinline preload="none">
-                            <source src="music-video.mp4" type="video/mp4">
-                        </video>
+                        <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&q=80&w=800"
+                            alt="Fashion" loading="lazy">
+                        <video class="preview-video" loop muted playsinline src="fashion-reel.mp4"></video>
                     </div>
                     <div class="card-content">
-                        <h3>RHYTHM & LIGHT</h3>
-                        <p>Visualizing sound through kinetic editing.</p>
+                        <h3>FASHION</h3>
+                        <p>Rhythmic precision and editorial visual art.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Row 3 -->
+            <!-- Portfolio Row 3 -->
             <div class="portfolio-row">
-                <div class="portfolio-card reveal-init" data-video="architecture.mp4">
+                <div class="portfolio-card reveal-init" data-video="documentary-film.mov">
                     <div class="thumbnail-wrapper">
-                        <img src="thumb5.jpg" alt="Architecture">
-                        <video class="preview-video" muted loop playsinline preload="none">
-                            <source src="architecture.mp4" type="video/mp4">
-                        </video>
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800"
+                            alt="Documentary" loading="lazy">
+                        <video class="preview-video" loop muted playsinline src="documentary-film.mov"></video>
                     </div>
                     <div class="card-content">
-                        <h3>URBAN STRUCTURES</h3>
-                        <p>The geometry of Dubai's skyline in motion.</p>
+                        <h3>DOCUMENTARY</h3>
+                        <p>Visual legacies and deep storytelling projects.</p>
                     </div>
                 </div>
 
-                <div class="portfolio-card reveal-init" data-video="automotive.mp4">
+                <div class="portfolio-card reveal-init" data-video="restaurants-reel.mov">
                     <div class="thumbnail-wrapper">
-                        <img src="thumb6.jpg" alt="Automotive">
-                        <video class="preview-video" muted loop playsinline preload="none">
-                            <source src="automotive.mp4" type="video/mp4">
-                        </video>
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800"
+                            alt="Restaurants & Cafes" loading="lazy">
+                        <video class="preview-video" loop muted playsinline src="restaurants-reel.mov"></video>
                     </div>
                     <div class="card-content">
-                        <h3>POWER & PRECISION</h3>
-                        <p>Capturing the raw adrenaline of speed.</p>
+                        <h3>RESTAURANTS & CAFES</h3>
+                        <p>Strategic visual assets for modern digital presence.</p>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section id="about" class="about">
