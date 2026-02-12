@@ -183,12 +183,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 768) {
             entries.forEach(entry => {
                 const video = entry.target.querySelector('.preview-video');
+                const card = entry.target;
+
                 if (video) {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-active');
-                        video.play().catch(() => { });
+                        card.classList.add('is-active');
+                        // Clear any existing timeout just in case
+                        clearTimeout(card.playTimeout);
+
+                        // Set 1 second delay
+                        card.playTimeout = setTimeout(() => {
+                            if (card.classList.contains('is-active')) {
+                                card.classList.add('video-active');
+                                video.play().catch(() => { });
+                            }
+                        }, 1000);
                     } else {
-                        entry.target.classList.remove('is-active');
+                        card.classList.remove('is-active');
+                        card.classList.remove('video-active');
+                        clearTimeout(card.playTimeout);
                         video.pause();
                         video.currentTime = 0;
                     }

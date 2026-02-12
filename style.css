@@ -794,6 +794,10 @@ section {
         transform: scale(1.05);
     }
 
+    .portfolio-card.video-active .preview-video {
+        opacity: 1;
+    }
+
     /* Floating Header Adjustment for Mobile */
     header {
         width: 95%;
