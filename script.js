@@ -178,16 +178,19 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // --- Mobile Video Auto-Play on Scroll ---
+    // --- Mobile Video Auto-Play on Scroll (Slider Logic) ---
     const mobileVideoCallback = (entries) => {
-        if (window.innerWidth <= 768) { // Only run on mobile
+        if (window.innerWidth <= 768) {
             entries.forEach(entry => {
                 const video = entry.target.querySelector('.preview-video');
                 if (video) {
                     if (entry.isIntersecting) {
+                        entry.target.classList.add('is-active');
                         video.play().catch(() => { });
                     } else {
+                        entry.target.classList.remove('is-active');
                         video.pause();
+                        video.currentTime = 0;
                     }
                 }
             });
@@ -195,7 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const mobileVideoObserver = new IntersectionObserver(mobileVideoCallback, {
-        threshold: 0.6 // Play when 60% of the card is visible
+        root: document.querySelector('.portfolio-grid'),
+        threshold: 0.7 // Play when card is 70% in center
     });
 
     portfolioCards.forEach(card => {

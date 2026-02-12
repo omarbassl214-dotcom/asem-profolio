@@ -764,8 +764,34 @@ section {
 
 @media (max-width: 768px) {
     .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 2rem;
+        padding: 0 15%;
+        /* Allow cards to peek from sides */
+        scrollbar-width: none;
+        /* Hide scrollbar for clean look */
+        -ms-overflow-style: none;
+        scroll-padding: 0 15%;
+    }
+
+    .portfolio-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .portfolio-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+        margin-bottom: 0;
+        transition: transform 0.8s var(--ease-modern), opacity 0.8s var(--ease-modern);
+        opacity: 0.4;
+        /* Dim inactive cards */
+    }
+
+    .portfolio-card.is-active {
+        opacity: 1;
+        transform: scale(1.05);
     }
 
     /* Floating Header Adjustment for Mobile */
