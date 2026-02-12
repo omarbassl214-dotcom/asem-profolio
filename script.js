@@ -178,6 +178,30 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // --- Mobile Video Auto-Play on Scroll ---
+    const mobileVideoCallback = (entries) => {
+        if (window.innerWidth <= 768) { // Only run on mobile
+            entries.forEach(entry => {
+                const video = entry.target.querySelector('.preview-video');
+                if (video) {
+                    if (entry.isIntersecting) {
+                        video.play().catch(() => { });
+                    } else {
+                        video.pause();
+                    }
+                }
+            });
+        }
+    };
+
+    const mobileVideoObserver = new IntersectionObserver(mobileVideoCallback, {
+        threshold: 0.6 // Play when 60% of the card is visible
+    });
+
+    portfolioCards.forEach(card => {
+        mobileVideoObserver.observe(card);
+    });
+
     // Initial Reveal for Hero (Wait for splash or small delay)
     setTimeout(() => {
         document.querySelectorAll('.hero .reveal-init').forEach(el => {
