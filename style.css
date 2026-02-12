@@ -286,6 +286,18 @@ nav ul {
     transition-delay: 0.3s;
 }
 
+.hero-description-text p {
+    font-size: 0.85rem;
+    /* Reduced slightly for uppercase balance */
+    font-weight: 300;
+    line-height: 2;
+    opacity: 0.7;
+    text-transform: uppercase;
+    /* Matching VIDEOGRAPHER */
+    letter-spacing: 0.35em;
+    /* High spacing matching the branding */
+}
+
 .hero-portrait.reveal-active {
     opacity: 1;
     transform: translateY(0);
@@ -454,18 +466,6 @@ nav ul {
     text-align: left;
     max-width: 500px;
     gap: 2rem;
-}
-
-.hero-description-text p {
-    font-size: 0.85rem;
-    /* Reduced slightly for uppercase balance */
-    font-weight: 300;
-    line-height: 2;
-    opacity: 0.7;
-    text-transform: uppercase;
-    /* Matching VIDEOGRAPHER */
-    letter-spacing: 0.35em;
-    /* High spacing matching the branding */
 }
 
 .hero-side-text .name {
@@ -765,38 +765,29 @@ section {
 
 @media (max-width: 768px) {
     .portfolio-grid {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 2rem;
-        padding: 0 15%;
-        /* Allow cards to peek from sides */
-        scrollbar-width: none;
-        /* Hide scrollbar for clean look */
-        -ms-overflow-style: none;
-        scroll-padding: 0 15%;
-    }
-
-    .portfolio-grid::-webkit-scrollbar {
-        display: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 5%;
+        overflow-x: hidden;
     }
 
     .portfolio-card {
-        flex: 0 0 85%;
-        scroll-snap-align: center;
+        flex: none;
+        width: 100%;
+        opacity: 1;
+        transform: none;
         margin-bottom: 0;
-        transition: transform 0.8s var(--ease-modern), opacity 0.8s var(--ease-modern);
-        opacity: 0.4;
-        /* Dim inactive cards */
+        border-bottom: 0.5px solid var(--card-border);
     }
 
     .portfolio-card.is-active {
-        opacity: 1;
-        transform: scale(1.05);
+        transform: none;
     }
 
-    .portfolio-card.video-active .preview-video {
+    .portfolio-card .preview-video {
         opacity: 1;
+        /* Always play/show videos on mobile */
     }
 
     /* Floating Header Adjustment for Mobile */
@@ -964,12 +955,5 @@ section {
         /* Ensure visibility */
         display: flex;
         /* Force display */
-    }
-
-    .hero-description-text p {
-        font-size: 0.8rem;
-        line-height: 1.8;
-        letter-spacing: 0.1em;
-        margin-bottom: 1.5rem;
     }
 }

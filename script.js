@@ -178,32 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // --- Mobile Video Auto-Play on Scroll (Slider Logic) ---
+    // --- Mobile Video Auto-Play on Scroll (Grid Logic) ---
     const mobileVideoCallback = (entries) => {
         if (window.innerWidth <= 768) {
             entries.forEach(entry => {
                 const video = entry.target.querySelector('.preview-video');
-                const card = entry.target;
-
                 if (video) {
                     if (entry.isIntersecting) {
-                        card.classList.add('is-active');
-                        // Clear any existing timeout just in case
-                        clearTimeout(card.playTimeout);
-
-                        // Set 1 second delay
-                        card.playTimeout = setTimeout(() => {
-                            if (card.classList.contains('is-active')) {
-                                card.classList.add('video-active');
-                                video.play().catch(() => { });
-                            }
-                        }, 1000);
+                        video.play().catch(() => { });
                     } else {
-                        card.classList.remove('is-active');
-                        card.classList.remove('video-active');
-                        clearTimeout(card.playTimeout);
                         video.pause();
-                        video.currentTime = 0;
                     }
                 }
             });
@@ -211,8 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const mobileVideoObserver = new IntersectionObserver(mobileVideoCallback, {
-        root: document.querySelector('.portfolio-grid'),
-        threshold: 0.7 // Play when card is 70% in center
+        threshold: 0.2 // Start playing as soon as they peek into view
     });
 
     portfolioCards.forEach(card => {
