@@ -146,13 +146,14 @@ ul {
 /* Header & Navigation - Floating Liquid Glass */
 header {
     position: fixed;
-    top: 2rem;
-    /* Floating from top */
+    top: 1.5rem;
+    /* Pushed slightly higher for elegance */
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 1200px;
-    padding: 1rem 3rem;
+    padding: 0.7rem 3rem;
+    /* Slimmer profile */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -164,9 +165,7 @@ header {
     backdrop-filter: blur(8px) saturate(180%);
     -webkit-backdrop-filter: blur(8px) saturate(180%);
     border: 0.5px solid rgba(197, 160, 89, 0.1);
-    /* Even subtler border at top */
     border-radius: 100px;
-    /* Pill Shape */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
     transition: width 0.5s var(--ease-modern),
@@ -184,33 +183,41 @@ header.nav-hidden {
 
 header.scrolled {
     width: 70%;
-    /* Shrink slightly on scroll */
-    padding: 0.8rem 3rem;
+    padding: 0.5rem 3rem;
+    /* Extra slim on scroll */
     background: rgba(15, 15, 15, 0.6);
-    /* More presence when scrolling */
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-color: rgba(197, 160, 89, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Hide mobile elements by default (Desktop View) */
+.menu-trigger,
+.mobile-nav-overlay {
+    display: none;
+}
+
 .logo {
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    /* Slightly smaller for precision */
     font-weight: 700;
 }
 
 nav ul {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    /* Increased spacing between links */
 }
 
 .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    /* Balanced size */
     font-weight: 400;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /* Luxury Reveal Transitions */
