@@ -503,267 +503,72 @@ nav ul {
     transform: translateY(0) scale(1.08);
 }
 
-@media (max-width: 1024px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 150px;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-}
-
-.hero-bg {
-    display: none;
-    /* Hide previous background if we are using the video */
-}
-
-.cta-btn {
-    padding: 1rem 3.5rem;
-    border: 1px solid var(--accent-color);
-    /* Gold Border */
-    color: var(--accent-color);
-    /* Gold Text */
-    border-radius: 2px;
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition-med);
-    background: transparent;
-}
-
-.cta-btn:hover {
-    background: var(--accent-color);
-    color: var(--bg-color);
-    /* Black text on gold background */
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-}
-
-/* Portfolio Grid - Clean 3-Column System */
-.portfolio {
-    padding: 100px 5%;
-    text-align: center;
-    perspective: 1200px;
-    /* Enable 3D space */
-}
-
-.portfolio h2 {
-    margin-left: 0;
-    text-align: center;
-}
-
-/* Portfolio Grid - Luxury Refined System */
-.portfolio {
-    padding: 180px 5%;
-    /* Massive whitespace = luxury */
-    text-align: center;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5rem 3rem;
-}
-
-.portfolio-card {
-    background: transparent;
-    /* Understated */
-    border: none;
-    border-bottom: 1px solid var(--card-border);
-    /* Thin luxury line */
-    padding-bottom: 2rem;
-    overflow: hidden;
-    transition: var(--transition);
-    cursor: pointer;
-}
-
-.portfolio-card:hover {
-    border-color: var(--accent-color);
-}
-
-.thumbnail-wrapper {
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    position: relative;
-    border-radius: 2px;
-    /* Sharp, precise corners */
-}
-
-.thumbnail-wrapper img {
-    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: grayscale(0.2);
-}
-
-.portfolio-card:hover .thumbnail-wrapper img {
-    transform: scale(1.08);
-    /* Silk smooth zoom */
-    filter: grayscale(0);
-}
-
-.thumbnail-wrapper {
-    width: 100%;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    position: relative;
-    /* Base for video alignment */
-}
-
-.preview-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    /* Cinematic smooth fade */
-    pointer-events: none;
-    /* Let clicks pass through to the card */
-}
-
-.portfolio-card:hover .preview-video {
-    opacity: 1;
-}
-
-.thumbnail-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-med);
-    filter: grayscale(0.5);
-}
-
-.portfolio-card:hover img {
-    transform: scale(1.1);
-    filter: grayscale(0);
-}
-
-.card-content {
-    padding: 1.5rem;
-}
-
-.card-content h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.card-content p {
-    font-size: 0.8rem;
-    opacity: 0.6;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    line-clamp: 2;
-    overflow: hidden;
-}
-
-section {
-    padding: 180px 10%;
-    /* More generous horizontal padding */
-    border-bottom: 0.5px solid rgba(197, 160, 89, 0.1);
-    /* Extremely thin luxury divider */
-}
-
-/* About Section - Interview Spread Style */
-.about {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    /* Weighted towards the text */
-    gap: 8rem;
-    align-items: center;
-}
-
-.about-content h2 {
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 1.2;
-    margin-bottom: 3rem;
-    letter-spacing: 0.05em;
-}
-
-.about-text p {
-    font-size: 1.1rem;
-    line-height: 2;
-    font-weight: 300;
-    opacity: 0.85;
-    margin-bottom: 2rem;
-    max-width: 550px;
-}
-
-.about-image {
-    position: relative;
-}
-
-.about-image img {
-    border-radius: 2px;
-    filter: brightness(0.9) contrast(1.1);
-}
-
-.about-image::after {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 60%;
-    height: 60%;
-    border-top: 1px solid var(--accent-color);
-    border-right: 1px solid var(--accent-color);
-    opacity: 0.3;
-    z-index: -1;
-}
-
-/* Lightbox */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.lightbox.active {
-    display: flex;
-    opacity: 1;
-}
-
-.lightbox-content {
-    width: 80%;
-    max-width: 1000px;
-    aspect-ratio: 16/9;
-    background: #000;
-    position: relative;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: #fff;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-/* Mobile Responsive */
-@media (max-width: 1024px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 0;
+        min-height: 100vh;
+    }
+
+    .video-container {
+        height: 100vh;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .hero-video {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-bg {
+        display: none;
+        /* Hide previous background if we are using the video */
+    }
+
+    .cta-btn {
+        padding: 1rem 3.5rem;
+        border: 1px solid var(--accent-color);
+        /* Gold Border */
+        color: var(--accent-color);
+        /* Gold Text */
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 0.3em;
+        position: relative;
+        overflow: hidden;
+        transition: var(--transition-med);
+        background: transparent;
+    }
+
+    .cta-btn:hover {
+        background: var(--accent-color);
+        color: var(--bg-color);
+        /* Black text on gold background */
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Portfolio Grid - Clean 3-Column System */
+    .portfolio {
+        padding: 100px 5%;
+        text-align: center;
+        perspective: 1200px;
+        /* Enable 3D space */
+    }
+
+    .portfolio h2 {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    /* Portfolio Grid - Luxury Refined System */
+    .portfolio {
+        padding: 180px 5%;
+        /* Massive whitespace = luxury */
+        text-align: center;
+    }
+
     .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -781,6 +586,69 @@ section {
         border-bottom: 0.5px solid var(--card-border);
     }
 
+    .portfolio-card:hover {
+        border-color: var(--accent-color);
+    }
+
+    .thumbnail-wrapper {
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        position: relative;
+        border-radius: 2px;
+        /* Sharp, precise corners */
+    }
+
+    .thumbnail-wrapper img {
+        transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: grayscale(0.2);
+    }
+
+    .portfolio-card:hover .thumbnail-wrapper img {
+        transform: scale(1.08);
+        /* Silk smooth zoom */
+        filter: grayscale(0);
+    }
+
+    .thumbnail-wrapper {
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        position: relative;
+        /* Base for video alignment */
+    }
+
+    .preview-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        /* Cinematic smooth fade */
+        pointer-events: none;
+        /* Let clicks pass through to the card */
+    }
+
+    .portfolio-card:hover .preview-video {
+        opacity: 1;
+    }
+
+    .thumbnail-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition-med);
+        filter: grayscale(0.5);
+    }
+
+    .portfolio-card:hover img {
+        transform: scale(1.1);
+        filter: grayscale(0);
+    }
+
     .portfolio-card.is-active {
         transform: none;
     }
@@ -788,6 +656,79 @@ section {
     .portfolio-card .preview-video {
         opacity: 1;
         /* Always play/show videos on mobile */
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .card-content h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+        font-size: 0.8rem;
+        opacity: 0.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-clamp: 2;
+        overflow: hidden;
+    }
+
+    section {
+        padding: 180px 10%;
+        /* More generous horizontal padding */
+        border-bottom: 0.5px solid rgba(197, 160, 89, 0.1);
+        /* Extremely thin luxury divider */
+    }
+
+    /* About Section - Interview Spread Style */
+    .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* Weighted towards the text */
+        gap: 8rem;
+        align-items: center;
+    }
+
+    .about-content h2 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1.2;
+        margin-bottom: 3rem;
+        letter-spacing: 0.05em;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+        line-height: 2;
+        font-weight: 300;
+        opacity: 0.85;
+        margin-bottom: 2rem;
+        max-width: 550px;
+    }
+
+    .about-image {
+        position: relative;
+    }
+
+    .about-image img {
+        border-radius: 2px;
+        filter: brightness(0.9) contrast(1.1);
+    }
+
+    .about-image::after {
+        content: "";
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        width: 60%;
+        height: 60%;
+        border-top: 1px solid var(--accent-color);
+        border-right: 1px solid var(--accent-color);
+        opacity: 0.3;
+        z-index: -1;
     }
 
     /* Floating Header Adjustment for Mobile */
