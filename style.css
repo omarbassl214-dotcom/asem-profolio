@@ -1026,3 +1026,48 @@ nav ul {
     transform: scale(1.03);
     box-shadow: 0 0 50px rgba(197, 160, 89, 0.15);
 }
+
+/* --- Lightbox --- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    aspect-ratio: 16/9;
+    background: #000;
+    box-shadow: 0 0 100px rgba(197, 160, 89, 0.2);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: var(--text-color);
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: var(--transition-fast);
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
