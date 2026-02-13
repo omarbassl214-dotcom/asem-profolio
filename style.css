@@ -538,13 +538,13 @@ nav ul {
     }
 
     .hero-portrait {
-        width: 85%;
-        height: auto;
-        max-height: 60vh;
+        width: 100%;
+        height: 100%;
+        max-height: 85vh;
         object-fit: cover;
-        border-radius: 20px;
-        margin: 0 auto;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
     }
 
     .hero-side-text {
@@ -600,11 +600,11 @@ nav ul {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        gap: 1.5rem;
-        padding: 3rem 5%;
+        gap: 2rem;
+        padding: 4rem 8%;
         scrollbar-width: none;
         -ms-overflow-style: none;
-        border-bottom: 0.5px solid rgba(197, 160, 89, 0.2);
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
     }
 
     .portfolio-row:last-child {
@@ -616,14 +616,13 @@ nav ul {
     }
 
     .portfolio-card {
-        flex: 0 0 85%;
+        flex: 0 0 75%;
         scroll-snap-align: start;
         width: auto;
         opacity: 1;
         transform: none;
         margin-bottom: 0;
         border: none;
-        padding-bottom: 1rem;
     }
 
     .portfolio-card .preview-video {
@@ -837,7 +836,85 @@ nav ul {
 .modal-close:hover {
     opacity: 1;
     color: var(--accent-color);
-    box-shadow: 0 0 50px rgba(197, 160, 89, 0.15);
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1.4rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 0.5px solid rgba(197, 160, 89, 0.1);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    border-radius: 2px;
+    transition: var(--transition-med);
+    text-transform: uppercase;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.4rem;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-weight: 300;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition-med);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 10px 40px rgba(197, 160, 89, 0.2);
+}
+
+#form-result {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.success-msg {
+    color: #c5a059;
+}
+
+.error-msg {
+    color: #ff5555;
+}
+
+/* HIRE ME Button Styling */
+.cta-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 1.4rem 5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    font-weight: 300;
+    cursor: pointer;
+    transition: var(--transition-med);
+    margin-top: 1.5rem;
+    border-radius: 2px;
 }
 
 .cta-btn:hover {
