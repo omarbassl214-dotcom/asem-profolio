@@ -229,5 +229,81 @@ document.addEventListener('DOMContentLoaded', () => {
         return start * (1 - t) + end * t;
     }
 
+    // --- Contact Modal Logic ---
+    const contactModal = document.getElementById('contact-modal');
+    const openContactBtn = document.getElementById('open-contact');
+    const closeContactBtn = document.querySelector('.modal-close');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
+    const openModal = () => {
+        contactModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scroll
+    };
+
+    const closeModal = () => {
+        contactModal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scroll
+    };
+
+    if (openContactBtn) openContactBtn.addEventListener('click', openModal);
+
+    // Make H2 headers with 'clickable-contact' class open the modal too
+    document.querySelectorAll('.clickable-contact').forEach(el => {
+        el.addEventListener('click', openModal);
+    });
+
+    if (closeContactBtn) closeContactBtn.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+
+    // Escape key to close modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && contactModal && contactModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // --- Web3Forms Form Submission ---
+    const contactForm = document.getElementById('contact-form');
+    const formResult = document.getElementById('form-result');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            formResult.innerHTML = "SENDING...";
+            formResult.className = "";
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        formResult.innerHTML = "THANK YOU! YOUR MESSAGE HAS BEEN SENT.";
+                        formResult.classList.add('success-msg');
+                        contactForm.reset();
+                        setTimeout(closeModal, 3000);
+                    } else {
+                        console.log(response);
+                        formResult.innerHTML = json.message;
+                        formResult.classList.add('error-msg');
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    formResult.innerHTML = "SOMETHING WENT WRONG. PLEASE TRY AGAIN.";
+                    formResult.classList.add('error-msg');
+                });
+        });
+    }
+
     // requestAnimationFrame(smoothScroll); // Optional: Enable for more intense effect
 });
